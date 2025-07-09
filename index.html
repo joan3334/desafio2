@@ -1,48 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="CSS/styles.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Mortgage repayment calculator</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mortgage Repayment Calculator</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&display=swap" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="./images/favicon-32x32.png">
 </head>
 <body>
-  <section>
-    <article>
-    <h1>Morgate Calculator</h1>
-    <p>clear all</p>
-    <form action="">
-      <label for="Amount">Morgate Amount</label>
-      <input id="Amount" type="number">
+  <div class="container">
+    <div class="calculator-card">
+      <div class="calculator-header">
+        <h2>Mortgage Calculator</h2>
+        <a href="#" id="clearAll">Clear All</a>
+      </div>
+      <div class="calculator-body">
+        <div class="form-group">
+          <label for="mortgageAmount">Mortgage Amount</label>
+          <div class="input-with-icon">
+            <span>£</span>
+            <input type="number" id="mortgageAmount" value="300000" />
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col">
+            <label for="mortgageTerm">Mortgage Term</label>
+            <div class="input-with-icon">
+              <input type="number" id="mortgageTerm" value="25" />
+              <span>years</span>
+            </div>
+          </div>
+          <div class="col">
+            <label for="interestRate">Interest Rate</label>
+            <div class="input-with-icon">
+              <input type="number" id="interestRate" step="0.01" value="5.25" />
+              <span>%</span>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Mortgage Type</label>
+          <div class="radio-group">
+            <label class="radio-button">
+              <input type="radio" name="mortgageType" value="repayment" checked />
+              Repayment
+            </label>
+            <label class="radio-button">
+              <input type="radio" name="mortgageType" value="interestOnly" />
+              Interest Only
+            </label>
+          </div>
+        </div>
+        <button class="calculate-btn" id="calculateBtn">Calculate Repayments</button>
+      </div>
+    </div>
 
-       <label for="term">Morgate term</label>
-      <input id="term" type="number">
+    <div class="results-card" id="resultsCard">
+      <div class="results-header">
+        <h3>Your results</h3>
+        <p>Your results are shown below based on the information you provided. To adjust the results, edit the form and click "Calculate repayments" again.</p>
+      </div>
+      <div class="results-body">
+        <div class="result-item">
+          <p>Your monthly repayments</p>
+          <p class="monthly-repayments" id="monthlyRepayments">£0.00</p>
+        </div>
+        <div class="result-item total">
+          <p>Total you'll repay over the term</p>
+          <p class="total-repay" id="totalRepay">£0.00</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-       <label for="rate">interest rate</label>
-      <input id="rate" type="number">
-      
-      <label >Morgate type</label>
-      <input id="type1" type="checkbox">
-      <label for="type1">repayment</label>
-      <input id="type2" type="checkbox">
-      <label for=""></label>
-
-      <label for="type"></label>
-    </form>
-    </article>
-    <article>
-
-    </article>
-  </section>
-
+  <script src="index.js"></script>
 </body>
 </html>
